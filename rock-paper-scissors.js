@@ -9,5 +9,13 @@ function getComputerChoice() {
     }   
 }
 
-    console.log(getComputerChoice());
-    
+function getPlayerChoice() {
+    let guess = parseInt(prompt(`Make a choice:
+        1 - ROCK
+        2 - PAPER
+        3 - SCISSORS`))
+        return guess;
+}
+
+
+console.log(getPlayerChoice());
