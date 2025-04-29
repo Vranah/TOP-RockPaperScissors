@@ -17,9 +17,8 @@ function getPlayerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound() {
-    let computerChoice = getComputerChoice();
-    let humanChoice = getPlayerChoice();
+function playRound(computerChoice, humanChoice) {
+    
     
     if(computerChoice === humanChoice){
         console.log(`It's a draw!`);
@@ -40,6 +39,6 @@ for(let i = 0; i <= 5; i++) {
         console.log(`GAME OVER!
             Final score: Player: ${humanScore} Computer: ${computerScore}`);
          }else{
-            playRound();
+            playRound(getComputerChoice(), getPlayerChoice());
          }
 }
