@@ -11,6 +11,32 @@ function getPlayerChoice() {
         return guess;
 }
 
-console.log(getComputerChoice());
+let humanScore = 0;
+let computerScore = 0;
 
-console.log(getPlayerChoice());
+function playRound() {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getPlayerChoice();
+    
+    if(computerChoice === humanChoice){
+        console.log(`It's a draw!`);
+        
+    }else if(computerChoice > humanChoice) {
+        humanScore++;
+        console.log(`YOU WON! The score is: Player: ${humanScore} Computer: ${computerScore}`);
+        
+    }else if(computerChoice < humanChoice){
+        computerScore++;
+        console.log(`YOU LOST! The score is: Player: ${humanScore} Computer: ${computerScore}`);
+    }
+    
+}
+
+for(let i = 0; i <= 5; i++) {
+    if(i === 5){
+        console.log(`GAME OVER!
+            Final score: Player: ${humanScore} Computer: ${computerScore}`);
+         }else{
+            playRound();
+         }
+}
