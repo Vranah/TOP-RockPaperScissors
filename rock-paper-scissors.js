@@ -4,11 +4,14 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let guess = parseInt(prompt(`Make a choice:
-        1 - ROCK
-        2 - PAPER
-        3 - SCISSORS`))
-        return guess;
+    let guess = prompt(`Make a choice: <ROCK> <PAPER> <SCISSORS>`)
+        if(guess.toLowerCase() === `rock`){
+            return 1;
+        }else if (guess.toLowerCase() === `paper`) {
+            return 2;
+        }else if (guess.toLowerCase() === `scissors`) {
+            return 3;
+        }
 }
 
 let humanScore = 0;
