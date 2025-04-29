@@ -14,13 +14,10 @@ function getPlayerChoice() {
         }
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(computerChoice, humanChoice) {
     
-    
     if(computerChoice === humanChoice){
+        draw++;
         console.log(`It's a draw!`);
         
     }else if(computerChoice > humanChoice) {
@@ -34,11 +31,21 @@ function playRound(computerChoice, humanChoice) {
     
 }
 
+let humanScore = 0;
+let computerScore = 0;
+let draw = 0;
+
 for(let i = 0; i <= 5; i++) {
-    if(i === 5){
-        console.log(`GAME OVER!
-            Final score: Player: ${humanScore} Computer: ${computerScore}`);
-         }else{
+    if(i === 5 && humanScore > computerScore){
+        console.log(`YOU WON!
+            Final score: Player: ${humanScore} Computer: ${computerScore} Draw: ${draw}`);
+         }else if (i === 5 && humanScore > computerScore){
+        console.log(`YOU LOST!
+                Final score: Player: ${humanScore} Computer: ${computerScore} Draw: ${draw}`);
+         }else if (i === 5 && humanScore == computerScore){
+            console.log(`DRAW!
+                    Final score: Player: ${humanScore} Computer: ${computerScore} Draw: ${draw}`);
+             }else{
             playRound(getComputerChoice(), getPlayerChoice());
          }
 }
