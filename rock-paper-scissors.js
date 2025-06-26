@@ -22,15 +22,15 @@ function getPlayerChoice() {
 
 function playRound(computerChoice, humanChoice) {
     
-    if((computerChoice ===`rock` && humanChoice === `scissors`) ||
-       (computerChoice ===`paper` && humanChoice === `rock`) ||
-       (computerChoice ===`scissors` && humanChoice === `paper`)) {
+    if((computerChoice ===`rock` && humanChoice === `scissors`) 
+       || (computerChoice ===`paper` && humanChoice === `rock`) 
+       || (computerChoice ===`scissors` && humanChoice === `paper`)) {
         computerScore++;
         console.log(` ${computerChoice} vs ${humanChoice} YOU LOOSE!`);
 
-    } else if((computerChoice ===`paper` && humanChoice === `scissors`) ||
-              (computerChoice ===`rock` && humanChoice === `paper`) ||
-              (computerChoice ===`scissors` && humanChoice === `rock`)) {
+    } else if((computerChoice ===`paper` && humanChoice === `scissors`) 
+              || (computerChoice ===`rock` && humanChoice === `paper`) 
+              || (computerChoice ===`scissors` && humanChoice === `rock`)) {
                 humanScore++;
                 console.log(` ${computerChoice} vs ${humanChoice} YOU WIN!`);
     }else if(computerChoice === humanChoice) {
